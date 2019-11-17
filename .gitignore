@@ -2,8 +2,7 @@
 /.git/
 
 #vs code file
-/.vs/
-
+.vs
 bin
 obj
 
