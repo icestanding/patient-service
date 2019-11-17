@@ -1,50 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using CodingChallange.Shared.ViewModels.Patient;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
-namespace CodingChanllage.Patient.Service.WebApi.Controllers
+namespace CodingChallange.Services.Patient.WebApi.Controllers
 {
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/patients")]
     [ApiController]
-    public class PatientController : ControllerBase
+    public class PatientController : BasePatientController
     {
+        IPatientManager _patientManager;
 
-        public PatientController() { }
+        public PatientController(ILogger<BasePatientController> logger, IPatientManager patientManager) : base(logger)
+        {
+            _patientManager = patientManager;
+        }
 
 
-        // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<PatientViewModel>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return null;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

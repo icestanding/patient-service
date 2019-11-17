@@ -7,12 +7,22 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Mappers\" />
+    <Folder Include="Middleware\" />
     <Folder Include="Validator\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodingChallange.Services.Patient\CodingChallange.Services.Patient.csproj" />
+    <ProjectReference Include="..\Repositories\CodingChallange.Repositories.Patient.EFCore\CodingChallange.Repositories.Patient.EFCore.csproj" />
+    <ProjectReference Include="..\Shared\CodingChallange.Shared.ViewModels.Patient\CodingChallange.Shared.ViewModels.Patient.csproj" />
   </ItemGroup>
 
 </Project>

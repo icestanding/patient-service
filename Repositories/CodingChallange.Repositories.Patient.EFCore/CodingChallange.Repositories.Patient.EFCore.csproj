@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\CodingChallange.Shared.Models.Patient\CodingChallange.Shared.Models.Patient.csproj" />
+    <ProjectReference Include="..\CodingChallange.Repositories.Patient\CodingChallange.Repositories.Patient.csproj" />
   </ItemGroup>
 
 </Project>

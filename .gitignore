@@ -4,3 +4,9 @@
 #vs code file
 /.vs/
 
+bin
+obj
+
+
+
+

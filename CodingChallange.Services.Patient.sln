@@ -25,13 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Shared.View
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Shared.Models.Patient", "Shared\CodingChallange.Shared.Models.Patient\CodingChallange.Shared.Models.Patient.csproj", "{DE512079-1193-4858-8ACC-A86A0B1BAED4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Shared.Repositories", "Shared\CodingChallange.Shared.Repositories\CodingChallange.Shared.Repositories.csproj", "{65F1215A-1431-40FB-96B8-471DD369BED0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Repositories.Patient.Tests", "Tests\CodingChallange.Repositories.Patient.Tests\CodingChallange.Repositories.Patient.Tests.csproj", "{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Services.Patient.WebApi", "CodingChallange.Service.Patient.WebApi\CodingChallange.Services.Patient.WebApi.csproj", "{2F56F0EC-152E-450A-885E-46B9681294D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallange.Shared.Patient", "Shared\CodingChallange.Shared.Patient\CodingChallange.Shared.Patient.csproj", "{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallange.Repositories.Patient.EFCore", "Repositories\CodingChallange.Repositories.Patient.EFCore\CodingChallange.Repositories.Patient.EFCore.csproj", "{142433E3-FF36-4B75-8FD5-92B6FCD74023}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,10 +67,6 @@ Global
 		{DE512079-1193-4858-8ACC-A86A0B1BAED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE512079-1193-4858-8ACC-A86A0B1BAED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE512079-1193-4858-8ACC-A86A0B1BAED4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65F1215A-1431-40FB-96B8-471DD369BED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65F1215A-1431-40FB-96B8-471DD369BED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65F1215A-1431-40FB-96B8-471DD369BED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65F1215A-1431-40FB-96B8-471DD369BED0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,6 +79,10 @@ Global
 		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{142433E3-FF36-4B75-8FD5-92B6FCD74023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142433E3-FF36-4B75-8FD5-92B6FCD74023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142433E3-FF36-4B75-8FD5-92B6FCD74023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142433E3-FF36-4B75-8FD5-92B6FCD74023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,9 +94,9 @@ Global
 		{DBBD735E-318C-4DA3-9AC3-9CF3EE2A1C6B} = {8289E9E1-D67A-48C5-BECB-36EFE366DE9F}
 		{68D40F9F-AD12-4D75-8C3F-E8BE29688A3B} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
 		{DE512079-1193-4858-8ACC-A86A0B1BAED4} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
-		{65F1215A-1431-40FB-96B8-471DD369BED0} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C} = {8289E9E1-D67A-48C5-BECB-36EFE366DE9F}
 		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
+		{142433E3-FF36-4B75-8FD5-92B6FCD74023} = {710651BC-3912-47C0-9E94-36F61BB7F9DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABAD48BE-E7EC-402E-B64D-11B4AD0CD102}

@@ -1,7 +1,0 @@
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\obj\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.csprojAssemblyReference.cache
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\obj\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.AssemblyInfoInputs.cache
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\obj\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.AssemblyInfo.cs
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\bin\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.deps.json
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\bin\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.runtimeconfig.json
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\bin\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.runtimeconfig.dev.json
-C:\patient-service\CodingChallange.Patient.Service.ConsoleApp\bin\Debug\netcoreapp2.2\CodingChallange.Patient.Service.ConsoleApp.dll
