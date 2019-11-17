@@ -1,0 +1,15 @@
+C:\patient-service\CodingChallange.Shared.Repositories\bin\Debug\netstandard2.0\CodingChallange.Shared.Repositories.deps.json
+C:\patient-service\CodingChallange.Shared.Repositories\bin\Debug\netstandard2.0\CodingChallange.Shared.Repositories.dll
+C:\patient-service\CodingChallange.Shared.Repositories\bin\Debug\netstandard2.0\CodingChallange.Shared.Repositories.pdb
+C:\patient-service\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.AssemblyInfoInputs.cache
+C:\patient-service\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.AssemblyInfo.cs
+C:\patient-service\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.dll
+C:\patient-service\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.pdb
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\bin\Debug\netstandard2.0\CodingChallange.Shared.Repositories.deps.json
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\bin\Debug\netstandard2.0\CodingChallange.Shared.Repositories.dll
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\bin\Debug\netstandard2.0\CodingChallange.Shared.Repositories.pdb
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.csprojAssemblyReference.cache
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.AssemblyInfoInputs.cache
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.AssemblyInfo.cs
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.dll
+C:\patient-service\Shared\CodingChallange.Shared.Repositories\obj\Debug\netstandard2.0\CodingChallange.Shared.Repositories.pdb

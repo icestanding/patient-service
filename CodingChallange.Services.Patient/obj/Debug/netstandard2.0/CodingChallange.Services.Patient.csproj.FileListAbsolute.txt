@@ -1,0 +1,7 @@
+C:\patient-service\CodingChallange.Services.Patient\bin\Debug\netstandard2.0\CodingChallange.Services.Patient.deps.json
+C:\patient-service\CodingChallange.Services.Patient\bin\Debug\netstandard2.0\CodingChallange.Services.Patient.dll
+C:\patient-service\CodingChallange.Services.Patient\bin\Debug\netstandard2.0\CodingChallange.Services.Patient.pdb
+C:\patient-service\CodingChallange.Services.Patient\obj\Debug\netstandard2.0\CodingChallange.Services.Patient.AssemblyInfoInputs.cache
+C:\patient-service\CodingChallange.Services.Patient\obj\Debug\netstandard2.0\CodingChallange.Services.Patient.AssemblyInfo.cs
+C:\patient-service\CodingChallange.Services.Patient\obj\Debug\netstandard2.0\CodingChallange.Services.Patient.dll
+C:\patient-service\CodingChallange.Services.Patient\obj\Debug\netstandard2.0\CodingChallange.Services.Patient.pdb

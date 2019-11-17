@@ -1,0 +1,12 @@
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.deps.json
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.runtimeconfig.json
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.runtimeconfig.dev.json
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.pdb
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.AssemblyInfoInputs.cache
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.AssemblyInfo.cs
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.pdb

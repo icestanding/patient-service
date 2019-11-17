@@ -1,0 +1,13 @@
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.deps.json
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.runtimeconfig.json
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.runtimeconfig.dev.json
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\bin\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.pdb
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.csprojAssemblyReference.cache
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.AssemblyInfoInputs.cache
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.AssemblyInfo.cs
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.dll
+C:\patient-service\Tests\CodingChallange.Services.Patient.WebApi.Test\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.WebApi.Test.pdb

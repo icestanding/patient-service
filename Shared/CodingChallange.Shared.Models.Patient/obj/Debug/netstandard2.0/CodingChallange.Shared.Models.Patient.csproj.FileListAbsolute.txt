@@ -1,0 +1,15 @@
+C:\patient-service\CodingChallange.Shared.Models.Patient\bin\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.deps.json
+C:\patient-service\CodingChallange.Shared.Models.Patient\bin\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.dll
+C:\patient-service\CodingChallange.Shared.Models.Patient\bin\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.pdb
+C:\patient-service\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.csprojAssemblyReference.cache
+C:\patient-service\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.AssemblyInfoInputs.cache
+C:\patient-service\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.AssemblyInfo.cs
+C:\patient-service\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.dll
+C:\patient-service\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.pdb
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\bin\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.deps.json
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\bin\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.dll
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\bin\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.pdb
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.AssemblyInfoInputs.cache
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.AssemblyInfo.cs
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.dll
+C:\patient-service\Shared\CodingChallange.Shared.Models.Patient\obj\Debug\netstandard2.0\CodingChallange.Shared.Models.Patient.pdb
