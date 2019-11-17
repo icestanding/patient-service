@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CodingChallage.Patient.Service.WebApi.Controllers
+namespace CodingChanllage.Patient.Service.WebApi.Controllers
 {
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/patients")]

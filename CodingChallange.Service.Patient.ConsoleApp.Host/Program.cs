@@ -1,4 +1,4 @@
-﻿using CodingChallage.Patient.Service.WebApi;
+﻿using CodingChanllage.Patient.Service.WebApi;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using System;

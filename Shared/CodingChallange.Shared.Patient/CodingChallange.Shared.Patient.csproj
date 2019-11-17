@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CodingChallange.Shared.Patient\CodingChallange.Shared.Patient.csproj" />
-  </ItemGroup>
-
 </Project>

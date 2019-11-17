@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Services.Patient", "CodingChallange.Services.Patient\CodingChallange.Services.Patient.csproj", "{BC467884-5757-433D-98CD-6B46C6A8D2BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Services.Patient.WebApi", "CodingChallage.Service.Patient.WebApi\CodingChallange.Services.Patient.WebApi.csproj", "{F719DD5E-1A8C-4880-B46D-D94094EB7941}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Repositories.Patient", "Repositories\CodingChallange.Repositories.Patient\CodingChallange.Repositories.Patient.csproj", "{DC935BEC-8453-4227-A1F3-1B8894C5E5B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Patient.Service.ConsoleApp.Host", "CodingChallange.Service.Patient.ConsoleApp.Host\CodingChallange.Patient.Service.ConsoleApp.Host.csproj", "{800876B3-C6AC-433E-A5FB-C2A4756D5B74}"
@@ -29,7 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Shared.Mode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Shared.Repositories", "Shared\CodingChallange.Shared.Repositories\CodingChallange.Shared.Repositories.csproj", "{65F1215A-1431-40FB-96B8-471DD369BED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallange.Repositories.Patient.Tests", "Tests\CodingChallange.Repositories.Patient.Tests\CodingChallange.Repositories.Patient.Tests.csproj", "{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Repositories.Patient.Tests", "Tests\CodingChallange.Repositories.Patient.Tests\CodingChallange.Repositories.Patient.Tests.csproj", "{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallange.Services.Patient.WebApi", "CodingChallange.Service.Patient.WebApi\CodingChallange.Services.Patient.WebApi.csproj", "{2F56F0EC-152E-450A-885E-46B9681294D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallange.Shared.Patient", "Shared\CodingChallange.Shared.Patient\CodingChallange.Shared.Patient.csproj", "{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +43,6 @@ Global
 		{BC467884-5757-433D-98CD-6B46C6A8D2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC467884-5757-433D-98CD-6B46C6A8D2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC467884-5757-433D-98CD-6B46C6A8D2BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F719DD5E-1A8C-4880-B46D-D94094EB7941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F719DD5E-1A8C-4880-B46D-D94094EB7941}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F719DD5E-1A8C-4880-B46D-D94094EB7941}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F719DD5E-1A8C-4880-B46D-D94094EB7941}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC935BEC-8453-4227-A1F3-1B8894C5E5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC935BEC-8453-4227-A1F3-1B8894C5E5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC935BEC-8453-4227-A1F3-1B8894C5E5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,6 +75,14 @@ Global
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F56F0EC-152E-450A-885E-46B9681294D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F56F0EC-152E-450A-885E-46B9681294D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F56F0EC-152E-450A-885E-46B9681294D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F56F0EC-152E-450A-885E-46B9681294D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{DE512079-1193-4858-8ACC-A86A0B1BAED4} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
 		{65F1215A-1431-40FB-96B8-471DD369BED0} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
 		{32CCD000-03FF-4B6B-B4BA-AB6D6D72D97C} = {8289E9E1-D67A-48C5-BECB-36EFE366DE9F}
+		{2C69E18D-C1AA-4832-A0AE-F8E973EE6013} = {45933B51-F995-4F18-8584-A6D7D6AF0B78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABAD48BE-E7EC-402E-B64D-11B4AD0CD102}

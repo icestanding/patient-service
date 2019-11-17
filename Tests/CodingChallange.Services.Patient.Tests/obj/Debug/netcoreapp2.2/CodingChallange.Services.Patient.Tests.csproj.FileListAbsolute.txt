@@ -10,3 +10,4 @@ C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcor
 C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.AssemblyInfo.cs
 C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.dll
 C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.pdb
+C:\patient-service\Tests\CodingChallange.Services.Patient.Tests\obj\Debug\netcoreapp2.2\CodingChallange.Services.Patient.Tests.csprojAssemblyReference.cache

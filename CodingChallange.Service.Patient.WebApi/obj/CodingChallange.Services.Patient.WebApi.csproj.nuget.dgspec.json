@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj": {}
+    "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj": {
+    "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj",
+        "projectUniqueName": "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj",
         "projectName": "CodingChallange.Services.Patient.WebApi",
-        "projectPath": "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj",
+        "projectPath": "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj",
         "packagesPath": "C:\\Users\\Chen\\.nuget\\packages\\",
-        "outputPath": "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\obj\\",
+        "outputPath": "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

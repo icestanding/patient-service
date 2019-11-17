@@ -25,16 +25,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "CodingChallange.Shared.Patient/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/CodingChallange.Shared.Patient.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CodingChallange.Shared.Patient.dll": {}
-        }
       }
     }
   },
@@ -181,16 +171,10 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "CodingChallange.Shared.Patient/1.0.0": {
-      "type": "project",
-      "path": "../CodingChallange.Shared.Patient/CodingChallange.Shared.Patient.csproj",
-      "msbuildProject": "../CodingChallange.Shared.Patient/CodingChallange.Shared.Patient.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "CodingChallange.Shared.Patient >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -201,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\patient-service\\Shared\\CodingChallange.Shared.Models.Patient\\CodingChallange.Shared.Models.Patient.csproj",
-      "projectName": "CodingChallange.Shared.Models.Patient",
-      "projectPath": "C:\\patient-service\\Shared\\CodingChallange.Shared.Models.Patient\\CodingChallange.Shared.Models.Patient.csproj",
+      "projectUniqueName": "C:\\patient-service\\Shared\\CodingChallange.Shared.Patient\\CodingChallange.Shared.Patient.csproj",
+      "projectName": "CodingChallange.Shared.Patient",
+      "projectPath": "C:\\patient-service\\Shared\\CodingChallange.Shared.Patient\\CodingChallange.Shared.Patient.csproj",
       "packagesPath": "C:\\Users\\Chen\\.nuget\\packages\\",
-      "outputPath": "C:\\patient-service\\Shared\\CodingChallange.Shared.Models.Patient\\obj\\",
+      "outputPath": "C:\\patient-service\\Shared\\CodingChallange.Shared.Patient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -223,11 +207,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "C:\\patient-service\\Shared\\CodingChallange.Shared.Patient\\CodingChallange.Shared.Patient.csproj": {
-              "projectPath": "C:\\patient-service\\Shared\\CodingChallange.Shared.Patient\\CodingChallange.Shared.Patient.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace CodingChallage.Patient.Service.WebApi
+namespace CodingChanllage.Patient.Service.WebApi
 {
     public class Startup
     {

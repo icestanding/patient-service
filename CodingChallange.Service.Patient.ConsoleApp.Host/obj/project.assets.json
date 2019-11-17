@@ -8540,8 +8540,8 @@
     },
     "CodingChallange.Services.Patient.WebApi/1.0.0": {
       "type": "project",
-      "path": "../CodingChallage.Service.Patient.WebApi/CodingChallange.Services.Patient.WebApi.csproj",
-      "msbuildProject": "../CodingChallage.Service.Patient.WebApi/CodingChallange.Services.Patient.WebApi.csproj"
+      "path": "../CodingChallange.Service.Patient.WebApi/CodingChallange.Services.Patient.WebApi.csproj",
+      "msbuildProject": "../CodingChallange.Service.Patient.WebApi/CodingChallange.Services.Patient.WebApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8583,8 +8583,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj": {
-              "projectPath": "C:\\patient-service\\CodingChallage.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj"
+            "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj": {
+              "projectPath": "C:\\patient-service\\CodingChallange.Service.Patient.WebApi\\CodingChallange.Services.Patient.WebApi.csproj"
             }
           }
         }
