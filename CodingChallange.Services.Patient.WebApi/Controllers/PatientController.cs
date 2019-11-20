@@ -8,9 +8,11 @@ using CodingChallange.Shared.Models.Patient;
 using System.Threading.Tasks;
 using Sieve.Models;
 using CodingChallange.Shared.Models.Pagination;
+using Newtonsoft.Json.Linq;
 
 namespace CodingChallange.Services.Patient.WebApi.Controllers
 {
+
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/patients")]
     [ApiController]
@@ -27,62 +29,68 @@ namespace CodingChallange.Services.Patient.WebApi.Controllers
 
 
         [HttpGet]
-        public ActionResult<PagedResult<PatientViewModel>> GetPatient(SieveModel sieveModel)
+        public async Task<ActionResult> GetPatient([FromQuery]SieveModel sieveModel)
         {
-            
-            var PatientViewModel = new PatientViewModel();
-            var result = new List<PatientViewModel>();
-            result.Add(PatientViewModel);
+            // return all patients
+            if (sieveModel.PageSize == null && sieveModel.Page == null)
+            {
+                var allPatients = await _patientManager.GetAllPatients();
+                var allPatientsViewModel = _mapper.Map<List<PatientViewModel>>(allPatients);
+                
+                return Ok(JObject.FromObject(new { patients = allPatientsViewModel }));
+            }
 
+            var pagedModel = await _patientManager.GetPagedPatientAsync(sieveModel);
+            var reuslt = new PagedResult<PatientViewModel>()
+            {
+                PageNumber = pagedModel.PageNumber,
+                PageSize = pagedModel.PageSize,
+                TotalNumberOfPages = pagedModel.TotalNumberOfPages,
+                TotalNumberOfRecords = pagedModel.TotalNumberOfRecords,
+                Results = _mapper.Map<List<PatientViewModel>>(pagedModel.Results)
+            };
 
-            return Ok(PatientViewModel);
+            return Ok(reuslt);
         }
-
-
 
         [HttpGet]
         [Route("{id}")]
-        public ActionResult<PatientViewModel> GetPatientById(Guid id)
+        public async Task<ActionResult<PatientViewModel>> GetPatientById(Guid id)
         {
             if (id == Guid.Empty)
             {
                 return null;
             }
-            var PatientViewModel = new PatientViewModel();
-            var result = new List<PatientViewModel>();
-            result.Add(PatientViewModel);
+            var model = await _patientManager.GetPatientByIdAsync(id);
+            var result = _mapper.Map<PatientViewModel>(model);
 
-
-            return Ok(PatientViewModel);
+            return Ok(result);
         }
-
 
         // Add New Patient
         [HttpPost]
         public async Task<ActionResult<PatientViewModel>> Post([FromBody] PatientRequestViewModel patientRequestViewModel)
         {
 
-                var model = _mapper.Map<PatientModel>(patientRequestViewModel);
-                model =  await _patientManager.AddNewPatientAsync(model);
-                var result = _mapper.Map<PatientViewModel>(model);
+            var model = _mapper.Map<PatientModel>(patientRequestViewModel);
+            model =  await _patientManager.AddNewPatientAsync(model);
+            var result = _mapper.Map<PatientViewModel>(model);
                 
-                return Ok(result);
+            return StatusCode(201, result);
         }
 
-
         [HttpPut]
-        public async Task<ActionResult<PatientViewModel>> Put([FromBody] PatientRequestViewModel patientRequestViewModel)
+        [Route("{id}")]
+        public async Task<ActionResult<PatientViewModel>> Put(Guid id, [FromBody] PatientRequestViewModel patientRequestViewModel)
         {
 
             var model = _mapper.Map<PatientModel>(patientRequestViewModel);
+            model.Id = id;
             model = await _patientManager.UpdatePatientAsync(model);
             var result = _mapper.Map<PatientViewModel>(model);
 
             return Ok(result);
         }
-
-
-
 
     }
 }

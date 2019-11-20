@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace CodingChallange.Shared.Models.Pagination
@@ -12,7 +13,7 @@ namespace CodingChallange.Shared.Models.Pagination
         public int TotalNumberOfPages { get; set; }
 
         public int TotalNumberOfRecords { get; set; }
- 
+        [JsonProperty("patients")]
         public IEnumerable<T> Results { get; set; }
     }
 }

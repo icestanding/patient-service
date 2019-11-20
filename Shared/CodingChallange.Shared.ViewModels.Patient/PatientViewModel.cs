@@ -1,7 +1,8 @@
 ﻿using CodingChallange.Shared.Patient;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
-
+using CodingChallange.Shared.JsonConverter;
 
 namespace CodingChallange.Shared.ViewModels.Patient
 {
@@ -16,6 +17,7 @@ namespace CodingChallange.Shared.ViewModels.Patient
         [JsonProperty("gender")]
         public Gender Gender { get; set; }
         [JsonProperty("date_of_birth")]
+        [JsonConverter(typeof(DateOfBirthConverter))]
         public DateTime DateOfBirth { get; set; }
         [JsonProperty("email")]
         public String Email { get; set; }
@@ -24,8 +26,10 @@ namespace CodingChallange.Shared.ViewModels.Patient
         [JsonProperty("is_active")]
         public bool IsActive { get; set; }
         [JsonProperty("created_at")]
+        [JsonConverter(typeof(DateConverter))]
         public DateTime CreateTime { get; set; }
         [JsonProperty("updated_at")]
+        [JsonConverter(typeof(DateConverter))]
         public DateTime UpdateTime { get; set; }
 
     }

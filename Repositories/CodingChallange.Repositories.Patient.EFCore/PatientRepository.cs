@@ -22,9 +22,9 @@ namespace CodingChallange.Repositories.Patient.EFCore
 
         private static void UpdateAuditColumns(PatientModel entity)
         {
-            if (entity.CreateTime == null)
+            if (entity.CreateTime == DateTime.MinValue)
             {
-                entity.CreateTime = DateTime.UtcNow;
+                entity.CreateTime = DateTime.Now;
                 entity.UpdateTime = entity.CreateTime;
             }
             else
@@ -38,7 +38,7 @@ namespace CodingChallange.Repositories.Patient.EFCore
             if (id == null || id == Guid.Empty) {
                 return null;
             }
-            return await _context.Patients.FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Patients.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public IQueryable<PatientModel> GetQueryablePatient()

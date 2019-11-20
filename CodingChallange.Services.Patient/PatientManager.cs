@@ -18,15 +18,16 @@ namespace CodingChallange.Services.Patient
         Task<PatientModel> UpdatePatientAsync(PatientModel patientModel);
         Task<PatientModel> GetPatientByIdAsync(Guid id);
         Task<PagedResult<PatientModel>> GetPagedPatientAsync(SieveModel sieveModel);
+        Task<List<PatientModel>> GetAllPatients();
     }
 
     public class PatientManager: IPatientManager
     {
         private readonly ILogger _logger;
         private readonly IPatientRepository _patientRepository;
-        private readonly SieveProcessor _sieveProcessor;
+        private readonly ISieveProcessor _sieveProcessor;
 
-        public PatientManager(ILogger<PatientManager> logger, IPatientRepository patientRepository, SieveProcessor sieveProcessor) 
+        public PatientManager(ILogger<PatientManager> logger, IPatientRepository patientRepository, ISieveProcessor sieveProcessor) 
         {
             _logger = logger;
             _patientRepository = patientRepository;
@@ -73,11 +74,15 @@ namespace CodingChallange.Services.Patient
                 throw new Exception($"Failed to update patient, patientId: {patientModel.Id}");
         }
 
-
         public async Task<PagedResult<PatientModel>> GetPagedPatientAsync(SieveModel sieveModel)
         {
+            sieveModel.Page = (sieveModel.Page == null) ? 1 : sieveModel.Page;
+            sieveModel.PageSize = (sieveModel.PageSize == null) ? 20 : sieveModel.PageSize;
+
             var queryablePatient = _patientRepository.GetQueryablePatient();
             var pagedPatients = _sieveProcessor.Apply(sieveModel, queryablePatient);
+            
+            var result = await pagedPatients.ToListAsync();
 
             var pageResult = new PagedResult<PatientModel>()
             {
@@ -89,6 +94,13 @@ namespace CodingChallange.Services.Patient
             };
 
             return pageResult;
+        }
+
+        public async Task<List<PatientModel>> GetAllPatients()
+        {
+            var queryablePatient = _patientRepository.GetQueryablePatient();
+
+            return await queryablePatient.ToListAsync();
         }
     }
 }

@@ -53,7 +53,8 @@ namespace CodingChanllage.Patient.Service.WebApi
                 o.AssumeDefaultVersionWhenUnspecified = true;
                 o.DefaultApiVersion = new ApiVersion(1, 0);
             });
-            services.Configure<SieveOptions>(Configuration.GetSection("Sieve"));
+            services.AddScoped<ISieveCustomSortMethods, SieveCustomSortMethods>();
+            services.AddScoped<ISieveCustomFilterMethods, SieveCustomFilterMethods>();
             services.AddAutoMapper(typeof(PatientModelAndViewModelMappingProfile));
             services.AddScoped<ISieveProcessor, PatientPaginProcessor>();
             services.AddTransient<IPatientRepository, PatientRepository>();

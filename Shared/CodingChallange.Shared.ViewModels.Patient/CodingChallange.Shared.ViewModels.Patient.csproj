@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodingChallange.Shared.JsonConverter\CodingChallange.Shared.JsonConverter.csproj" />
     <ProjectReference Include="..\CodingChallange.Shared.Patient\CodingChallange.Shared.Patient.csproj" />
   </ItemGroup>
 
