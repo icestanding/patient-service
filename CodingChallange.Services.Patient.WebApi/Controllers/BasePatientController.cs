@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace CodingChallange.Services.Patient.WebApi.Controllers
 {
-    public class BasePatientController: Controller
+    [Route("api/v{version:ApiVersion}/[controller]")]
+    [ApiController]
+    public class BasePatientsController: Controller
     {
-        protected readonly ILogger<BasePatientController> _logger;
-        public BasePatientController(ILogger<BasePatientController> logger) {
+        protected readonly ILogger<BasePatientsController> _logger;
+        public BasePatientsController(ILogger<BasePatientsController> logger) {
             _logger = logger;
         }
     }

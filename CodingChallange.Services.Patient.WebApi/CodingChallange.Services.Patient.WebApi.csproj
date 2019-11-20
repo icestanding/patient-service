@@ -6,21 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.6" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mappers\" />
-    <Folder Include="Middleware\" />
-    <Folder Include="Validator\" />
+    <PackageReference Include="Sieve" Version="2.3.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CodingChallange.Services.Patient\CodingChallange.Services.Patient.csproj" />
+    <ProjectReference Include="..\CodingChallange.Shared.Models.Pagination\CodingChallange.Shared.Models.Pagination.csproj" />
     <ProjectReference Include="..\Repositories\CodingChallange.Repositories.Patient.EFCore\CodingChallange.Repositories.Patient.EFCore.csproj" />
     <ProjectReference Include="..\Shared\CodingChallange.Shared.ViewModels.Patient\CodingChallange.Shared.ViewModels.Patient.csproj" />
   </ItemGroup>

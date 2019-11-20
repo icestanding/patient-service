@@ -12,13 +12,6 @@ namespace CodingChallange.Repositories.Patient.EFCore
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
-        {
-            modelBuilder.HasDefaultSchema("ClinicData");
-
-            base.OnModelCreating(modelBuilder);
-        }
-
 
     }
 }

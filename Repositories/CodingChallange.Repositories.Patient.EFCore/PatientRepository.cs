@@ -1,32 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CodingChallange.Repositories.Patient;
 using CodingChallange.Shared.Models.Patient;
+using Microsoft.EntityFrameworkCore;
+using Sieve.Models;
+using Sieve.Services;
 
 namespace CodingChallange.Repositories.Patient.EFCore
 {
     public class PatientRepository : IPatientRepository
     {
-        public Task AddPatientAsync(PatientModel patientModel)
+        private readonly PatientDbContext _context;
+
+        public PatientRepository(PatientDbContext context) 
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<List<PatientModel>> GetAllPatientModelAsync()
+        private static void UpdateAuditColumns(PatientModel entity)
         {
-            throw new NotImplementedException();
+            if (entity.CreateTime == null)
+            {
+                entity.CreateTime = DateTime.UtcNow;
+                entity.UpdateTime = entity.CreateTime;
+            }
+            else
+            {
+                entity.UpdateTime = DateTime.UtcNow;
+            }
         }
 
-        public Task<PatientModel> GetPatientByIdAsync(Guid id)
+        public async Task<PatientModel> GetPatientByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == null || id == Guid.Empty) {
+                return null;
+            }
+            return await _context.Patients.FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public Task<PatientModel> UpdatePatientModelAsync(PatientModel patientModel)
+        public IQueryable<PatientModel> GetQueryablePatient()
         {
-            throw new NotImplementedException();
+            return _context.Patients.AsNoTracking();
+        }
+
+        public async Task<PatientModel> AddPatientAsync(PatientModel patientModel)
+        {
+            patientModel.Id = new Guid();
+            UpdateAuditColumns(patientModel);
+
+            return (await _context.Patients.AddAsync(patientModel)).Entity;
+        }
+
+        public async Task<PatientModel> UpdatePatientAsync(PatientModel patientModel)
+        {
+            var targetPatientModel = await GetPatientByIdAsync(patientModel.Id);
+
+            if (targetPatientModel == null) {
+                return null;
+            }
+            targetPatientModel = patientModel;
+            UpdateAuditColumns(targetPatientModel);
+
+            return  _context.Patients.Update(targetPatientModel).Entity;
+        }
+
+        public bool SaveChanges()
+        {
+            return _context.SaveChanges() > 0 ? true : false;
         }
     }
 }

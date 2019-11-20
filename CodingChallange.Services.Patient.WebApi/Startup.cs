@@ -15,6 +15,13 @@ using Microsoft.EntityFrameworkCore.InMemory;
 using Microsoft.EntityFrameworkCore;
 using CodingChallange.Services.Patient;
 using CodingChallange.Repositories.Patient;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using AutoMapper;
+using CodingChallange.Services.Patient.WebApi.Mappers;
+using Sieve.Services;
+using Sieve.Models;
 
 namespace CodingChanllage.Patient.Service.WebApi
 {
@@ -30,12 +37,25 @@ namespace CodingChanllage.Patient.Service.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(opt =>
+                {
+                    opt.SerializerSettings.Converters.Add(new StringEnumConverter());
+                    opt.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                });
             services.AddDbContext<PatientDbContext>(options => 
-                options.UseInMemoryDatabase(databaseName: Configuration["DatabaseSetting:DatabaseName"]), 
-                ServiceLifetime.Transient
+                options.UseInMemoryDatabase(databaseName: Configuration["DatabaseSetting:DatabaseName"])
                 );
             services.AddLogging();
+            services.AddApiVersioning(o => {
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+            });
+            services.Configure<SieveOptions>(Configuration.GetSection("Sieve"));
+            services.AddAutoMapper(typeof(PatientModelAndViewModelMappingProfile));
+            services.AddScoped<ISieveProcessor, PatientPaginProcessor>();
             services.AddTransient<IPatientRepository, PatientRepository>();
             services.AddTransient<IPatientManager, PatientManager>();
         }

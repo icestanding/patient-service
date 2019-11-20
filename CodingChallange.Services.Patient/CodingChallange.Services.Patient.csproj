@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodingChallange.Shared.Models.Pagination\CodingChallange.Shared.Models.Pagination.csproj" />
     <ProjectReference Include="..\Repositories\CodingChallange.Repositories.Patient\CodingChallange.Repositories.Patient.csproj" />
   </ItemGroup>
 

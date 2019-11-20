@@ -22,7 +22,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodingChallange.Service.Patient.WebApi\CodingChallange.Services.Patient.WebApi.csproj" />
+    <ProjectReference Include="..\CodingChallange.Services.Patient.WebApi\CodingChallange.Services.Patient.WebApi.csproj" />
   </ItemGroup>
   
   
