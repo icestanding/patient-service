@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,8 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodingChallange.Shared.Models.Pagination\CodingChallange.Shared.Models.Pagination.csproj" />
+    
     <ProjectReference Include="..\Repositories\CodingChallange.Repositories.Patient\CodingChallange.Repositories.Patient.csproj" />
+    
+    <ProjectReference Include="..\Shared\CodingChallange.Shared.Models.Pagination\CodingChallange.Shared.Models.Pagination.csproj" />
   </ItemGroup>
 
 </Project>

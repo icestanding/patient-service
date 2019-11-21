@@ -37,6 +37,10 @@ namespace CodingChallange.Services.Patient
 
         public async Task<PatientModel> GetPatientByIdAsync(Guid id)
         {
+            if (id == Guid.Empty) 
+            {
+                return null;
+            }
 
             PatientModel patientModel = await _patientRepository.GetPatientByIdAsync(id);
 
@@ -63,15 +67,11 @@ namespace CodingChallange.Services.Patient
         {
             var updatePatient = await _patientRepository.UpdatePatientAsync(patientModel);
 
-            if (updatePatient != null)
-            {
-                if (_patientRepository.SaveChanges())
-                    return updatePatient;
-                else
-                    throw new Exception($"Failed to save updated patient to database, patientId: {patientModel.Id}");
-            }
+            if (_patientRepository.SaveChanges())
+                return updatePatient;
             else
-                throw new Exception($"Failed to update patient, patientId: {patientModel.Id}");
+                throw new Exception($"Failed to save updated patient to database, patientId: {patientModel.Id}");
+
         }
 
         public async Task<PagedResult<PatientModel>> GetPagedPatientAsync(SieveModel sieveModel)

@@ -20,7 +20,7 @@ namespace CodingChallange.Repositories.Patient.EFCore
             _context = context;
         }
 
-        private static void UpdateAuditColumns(PatientModel entity)
+        public static void UpdateAuditColumns(PatientModel entity)
         {
             if (entity.CreateTime == DateTime.MinValue)
             {

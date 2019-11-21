@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using CodingChallange.Shared.ViewModels.Patient;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
-using CodingChallange.Shared.Models.Patient;
 using System.Threading.Tasks;
 using Sieve.Models;
-using CodingChallange.Shared.Models.Pagination;
 using Newtonsoft.Json.Linq;
+using CodingChallange.Shared.Models.Pagination;
+using CodingChallange.Shared.ViewModels.Patient;
+using CodingChallange.Shared.Models.Patient;
+using CodingChallange.Shared.ViewModels;
+using CodingChallange.Services.Patient;
 
 namespace CodingChallange.Services.Patient.WebApi.Controllers
 {
@@ -31,65 +33,125 @@ namespace CodingChallange.Services.Patient.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult> GetPatient([FromQuery]SieveModel sieveModel)
         {
+           
             // return all patients
             if (sieveModel.PageSize == null && sieveModel.Page == null)
             {
-                var allPatients = await _patientManager.GetAllPatients();
-                var allPatientsViewModel = _mapper.Map<List<PatientViewModel>>(allPatients);
-                
-                return Ok(JObject.FromObject(new { patients = allPatientsViewModel }));
+                try
+                {
+                    _logger.LogInformation($"Get all Patients info from db");
+                    var allPatients = await _patientManager.GetAllPatients();
+                    var allPatientsViewModel = _mapper.Map<List<PatientViewModel>>(allPatients);
+                    return Ok(JObject.FromObject(new { patients = allPatientsViewModel }));
+                }
+                catch (Exception e){
+                    throw new HttpStatusCodeException(500,
+                    "Error happend when process get all patients request." + e.Message);
+                }
             }
 
-            var pagedModel = await _patientManager.GetPagedPatientAsync(sieveModel);
-            var reuslt = new PagedResult<PatientViewModel>()
+            try
             {
-                PageNumber = pagedModel.PageNumber,
-                PageSize = pagedModel.PageSize,
-                TotalNumberOfPages = pagedModel.TotalNumberOfPages,
-                TotalNumberOfRecords = pagedModel.TotalNumberOfRecords,
-                Results = _mapper.Map<List<PatientViewModel>>(pagedModel.Results)
-            };
+                var pagedModel = await _patientManager.GetPagedPatientAsync(sieveModel);
+                _logger.LogInformation($"Get paged patient result from DB PageSize {sieveModel.PageSize}, PageNo: {sieveModel.Page}");
 
-            return Ok(reuslt);
+                var reuslt = new PagedResult<PatientViewModel>()
+                {
+                    PageNumber = pagedModel.PageNumber,
+                    PageSize = pagedModel.PageSize,
+                    TotalNumberOfPages = pagedModel.TotalNumberOfPages,
+                    TotalNumberOfRecords = pagedModel.TotalNumberOfRecords,
+                    Results = _mapper.Map<List<PatientViewModel>>(pagedModel.Results)
+                };
+
+                return Ok(reuslt);
+            }
+            catch (Exception e)
+            {
+                throw new HttpStatusCodeException(500,
+                "Error happend when get paged result request." + e.Message);
+            }
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<PatientViewModel>> GetPatientById(Guid id)
         {
+            _logger.LogInformation($"Get patient by id {id.ToString()}");
             if (id == Guid.Empty)
             {
-                return null;
+                return NotFound("No such patient exists");
             }
-            var model = await _patientManager.GetPatientByIdAsync(id);
-            var result = _mapper.Map<PatientViewModel>(model);
+            try
+            {
+                var model = await _patientManager.GetPatientByIdAsync(id);
 
-            return Ok(result);
+                if (model == null)
+                {
+                    return NotFound("No such patient exists");
+                }
+                var result = _mapper.Map<PatientViewModel>(model);
+
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                throw new HttpStatusCodeException(500,
+                "Error happend when get patient by Id." + e.Message);
+            }
         }
 
         // Add New Patient
         [HttpPost]
         public async Task<ActionResult<PatientViewModel>> Post([FromBody] PatientRequestViewModel patientRequestViewModel)
         {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid JSON");
 
-            var model = _mapper.Map<PatientModel>(patientRequestViewModel);
-            model =  await _patientManager.AddNewPatientAsync(model);
-            var result = _mapper.Map<PatientViewModel>(model);
-                
-            return StatusCode(201, result);
+            try
+            {
+                _logger.LogInformation($"Add new patient FirstName :{patientRequestViewModel.FirstName} ");
+                var model = _mapper.Map<PatientModel>(patientRequestViewModel);
+                model = await _patientManager.AddNewPatientAsync(model);
+                var result = _mapper.Map<PatientViewModel>(model);
+
+                return StatusCode(201, result);
+            }
+            catch (Exception e)
+            {
+                throw new HttpStatusCodeException(500,
+                "Error happend when create new patient." + e.Message);
+            }
         }
 
         [HttpPut]
         [Route("{id}")]
         public async Task<ActionResult<PatientViewModel>> Put(Guid id, [FromBody] PatientRequestViewModel patientRequestViewModel)
         {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid JSON");
 
-            var model = _mapper.Map<PatientModel>(patientRequestViewModel);
-            model.Id = id;
-            model = await _patientManager.UpdatePatientAsync(model);
-            var result = _mapper.Map<PatientViewModel>(model);
+            try
+            {
+                _logger.LogInformation($"Update patient FirstName :{patientRequestViewModel.FirstName} ");
+                var model = _mapper.Map<PatientModel>(patientRequestViewModel);
+                model.Id = id;
+                model = await _patientManager.UpdatePatientAsync(model);
 
-            return Ok(result);
+                if (model == null)
+                {
+                    return NotFound("No such patient exists");
+                }
+
+                var result = _mapper.Map<PatientViewModel>(model);
+
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                throw new HttpStatusCodeException(500,
+                "Error happend when update a patient." + e.Message);
+            }
         }
 
     }

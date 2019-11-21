@@ -22,7 +22,6 @@ namespace CodingChallange.Shared.ViewModels.Patient
         
         [Required]
         [JsonProperty("date_of_birth")]
-        [JsonConverter(typeof(CustomDateTimeConverter))]
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
         
@@ -40,12 +39,4 @@ namespace CodingChallange.Shared.ViewModels.Patient
         public bool IsActive { get; set; }
     }
 
-
-    public class CustomDateTimeConverter : IsoDateTimeConverter
-    {
-        public CustomDateTimeConverter()
-        {
-            base.DateTimeFormat = "yyyy-MM-dd";
-        }
-    }
 }

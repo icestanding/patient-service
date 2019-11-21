@@ -18,9 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodingChallange.Services.Patient\CodingChallange.Services.Patient.csproj" />
-    <ProjectReference Include="..\CodingChallange.Shared.Models.Pagination\CodingChallange.Shared.Models.Pagination.csproj" />
     <ProjectReference Include="..\Repositories\CodingChallange.Repositories.Patient.EFCore\CodingChallange.Repositories.Patient.EFCore.csproj" />
+    <ProjectReference Include="..\Shared\CodingChallange.Shared.Models.Pagination\CodingChallange.Shared.Models.Pagination.csproj" />
     <ProjectReference Include="..\Shared\CodingChallange.Shared.ViewModels.Patient\CodingChallange.Shared.ViewModels.Patient.csproj" />
+    <ProjectReference Include="..\Shared\CodingChallange.Shared.ViewModels\CodingChallange.Shared.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
