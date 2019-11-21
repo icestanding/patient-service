@@ -7,10 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Moq" Version="4.13.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CodingChallange.Services.Patient.WebApi\CodingChallange.Services.Patient.WebApi.csproj" />
+    <ProjectReference Include="..\..\CodingChallange.Services.Patient\CodingChallange.Services.Patient.csproj" />
+    <ProjectReference Include="..\..\Repositories\CodingChallange.Repositories.Patient\CodingChallange.Repositories.Patient.csproj" />
+    <ProjectReference Include="..\CodingChallange.Repositories.Patient.Tests\CodingChallange.Repositories.Patient.Tests.csproj" />
   </ItemGroup>
 
 </Project>

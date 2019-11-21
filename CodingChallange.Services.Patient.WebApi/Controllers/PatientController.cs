@@ -23,7 +23,7 @@ namespace CodingChallange.Services.Patient.WebApi.Controllers
         IPatientManager _patientManager;
         IMapper _mapper;
 
-        public PatientsController(ILogger<BasePatientsController> logger, IPatientManager patientManager, IMapper mapper) : base(logger)
+        public PatientsController(ILogger<PatientsController> logger, IPatientManager patientManager, IMapper mapper) : base(logger)
         {
             _patientManager = patientManager;
             _mapper = mapper;
@@ -114,7 +114,6 @@ namespace CodingChallange.Services.Patient.WebApi.Controllers
                 var model = _mapper.Map<PatientModel>(patientRequestViewModel);
                 model = await _patientManager.AddNewPatientAsync(model);
                 var result = _mapper.Map<PatientViewModel>(model);
-
                 return StatusCode(201, result);
             }
             catch (Exception e)
@@ -144,7 +143,6 @@ namespace CodingChallange.Services.Patient.WebApi.Controllers
                 }
 
                 var result = _mapper.Map<PatientViewModel>(model);
-
                 return Ok(result);
             }
             catch (Exception e)

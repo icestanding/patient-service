@@ -88,11 +88,11 @@ namespace CodingChallange.Repositories.Patient.Tests
             };
             using (var context = new PatientDbContext(dbOptionsBuilder.Options))
             {
-
-                var repo = new PatientRepository(context);
+                var dbContext = new PatientDbContext(dbOptionsBuilder.Options);
+                var repo = new PatientRepository(dbContext);
                 var result = await repo.AddPatientAsync(testModel);
                 repo.SaveChanges();
-                Assert.AreEqual(1, context.Patients.ToListAsync().Result.Count);
+                Assert.AreNotEqual(0, context.Patients.Select(q=> q.Id == testModel.Id).Count());
 
             }
         }
