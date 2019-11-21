@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using CodingChallange.Shared.Models.Pagination;
+using CodingChallange.Services.Patient.Sieve;
 
 namespace CodingChallange.Services.Patient
 {
@@ -47,7 +48,6 @@ namespace CodingChallange.Services.Patient
             return patientModel;
         }
 
-
         public async Task<PatientModel> AddNewPatientAsync(PatientModel patientModel) 
         {
             var newPatient = await _patientRepository.AddPatientAsync(patientModel);
@@ -77,23 +77,12 @@ namespace CodingChallange.Services.Patient
         public async Task<PagedResult<PatientModel>> GetPagedPatientAsync(SieveModel sieveModel)
         {
             sieveModel.Page = (sieveModel.Page == null) ? 1 : sieveModel.Page;
-            sieveModel.PageSize = (sieveModel.PageSize == null) ? 20 : sieveModel.PageSize;
+            sieveModel.PageSize = (sieveModel.PageSize == null) ? 50 : sieveModel.PageSize;
 
             var queryablePatient = _patientRepository.GetQueryablePatient();
-            var pagedPatients = _sieveProcessor.Apply(sieveModel, queryablePatient);
-            
-            var result = await pagedPatients.ToListAsync();
+            var Pagedresult =  _sieveProcessor.GetPaged(queryablePatient, sieveModel);
 
-            var pageResult = new PagedResult<PatientModel>()
-            {
-                PageNumber = sieveModel.Page.Value,
-                PageSize = sieveModel.PageSize.Value,
-                TotalNumberOfPages = (int)Math.Ceiling((decimal)queryablePatient.Count() / sieveModel.PageSize.Value),
-                TotalNumberOfRecords = queryablePatient.Count(),
-                Results = await pagedPatients.ToListAsync()
-            };
-
-            return pageResult;
+            return Pagedresult;
         }
 
         public async Task<List<PatientModel>> GetAllPatients()

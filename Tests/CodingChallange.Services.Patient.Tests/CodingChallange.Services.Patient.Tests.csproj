@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\CodingChallange.Services.Patient\CodingChallange.Services.Patient.csproj" />
     <ProjectReference Include="..\..\Repositories\CodingChallange.Repositories.Patient\CodingChallange.Repositories.Patient.csproj" />
+    <ProjectReference Include="..\CodingChallange.Repositories.Patient.Tests\CodingChallange.Repositories.Patient.Tests.csproj" />
   </ItemGroup>
 
 </Project>

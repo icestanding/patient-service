@@ -8,6 +8,12 @@ using Sieve.Services;
 using System;
 using CodingChallange.Shared.Models.Patient;
 using CodingChallange.Shared.Patient;
+using Sieve.Models;
+using System.Linq;
+using CodingChallange.Services.Patient.Sieve;
+using CodingChallange.Shared.Models.Pagination;
+using System.Collections.Generic;
+using CodingChallange.Repositories.Patient.Tests;
 
 namespace CodingChallange.Services.Patient.Tests
 {
@@ -104,7 +110,7 @@ namespace CodingChallange.Services.Patient.Tests
             Assert.Fail();
         }
 
-
+        [TestMethod]
         public async Task PatientManagerAddNewPatientAsyncFailedSaveToDbTest()
         {
             var testModel = createSinglePatientModel();
@@ -124,7 +130,7 @@ namespace CodingChallange.Services.Patient.Tests
             }
             Assert.Fail();
         }
-
+        [TestMethod]
         public async Task PatientManagerUpdatePatientAsyncSuccessTest()
         {
             var testModel = createSinglePatientModel();
@@ -145,7 +151,7 @@ namespace CodingChallange.Services.Patient.Tests
             }
         }
 
-
+        [TestMethod]
         public async Task PatientManagerUpdatePatientAsyncFailTest()
         {
             var testModel = createSinglePatientModel();
@@ -164,6 +170,35 @@ namespace CodingChallange.Services.Patient.Tests
                 return;
             }
             Assert.Fail();
+        }
+        [TestMethod]
+        public async Task PatientManagerGetPagedPatientAsyncSuccessTest()
+        {
+
+            SieveModel sieveModel = new SieveModel();
+            sieveModel.Page = null;
+            sieveModel.PageSize = null;
+
+            List<PatientModel> patientModels =  TestDataGenerateHelper.createPatientModelData();
+            IQueryable<PatientModel> queryableCountries = patientModels.AsQueryable();
+
+            var expected = new PagedResult<PatientModel>() { PageNumber = 1 };
+
+            _mockRepo.Setup(r => r.GetQueryablePatient()).Returns(queryableCountries);
+
+            var patientManager = new PatientManager(_mockLogger.Object, _mockRepo.Object, _mockSieveProcessor.Object);
+            try
+            {
+                var result = await patientManager.GetPagedPatientAsync(sieveModel);
+                Assert.AreEqual(1, result.PageNumber);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+                return;
+            }
+            Assert.IsTrue(true);
+
         }
 
 
